@@ -4,16 +4,15 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --config=jestconfig.json"
   },
   "author": "or.a",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.7.2",
-    "express": "^4.17.1",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "jest": "^26.6.3"
   }
 }
