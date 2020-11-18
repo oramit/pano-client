@@ -29,7 +29,7 @@ module.exports = class App {
             }
             console.log(`Output file initiated..`);
         });
-    }
+    };
 
     writeResult = (reqId) => {
         const resultText = `${this.accumulatedRequests[reqId].input} ==> ${this.accumulatedRequests[reqId].result}`;
@@ -43,7 +43,7 @@ module.exports = class App {
             console.log(`Removing data from accumulator`);
             delete this.accumulatedRequests[reqId];
         });
-    }
+    };
 
     handleNextCalculation = async () => {
         const nextNumberToCalc = this.inputsToWorkWith.pop();
