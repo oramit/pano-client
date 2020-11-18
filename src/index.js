@@ -8,8 +8,8 @@ const { numbers } = require('./data.js');
     
     console.log('Calculations client was created successfully..');
 
-    const results = await appInst.calculate();
+    await appInst.calculate();
     
-    console.log(`Calculated results:\n`, JSON.stringify(results));
+    Object.keys(appInst.accumulatedRequests).length;
     console.log(`Finished calculating after ${new Date().getTime() - startTime.getTime()} miliseconds.`);
 })();

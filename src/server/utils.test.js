@@ -10,7 +10,7 @@ test('Let`s test queryCalc utility', async () => {
 
 test('Let`s test queryCalcs utility', async () => {
     const number = 2;
-    const result = await queryCalcs([2]);
+    const result = await queryCalcs([number]);
     expect(result).toStrictEqual([{number, reqId: dummyReqId}]);
 });
 

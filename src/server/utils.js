@@ -1,7 +1,7 @@
 module.exports = (connector) => {
   const queryCalc = async (number) => {
-    const response = await connector.queryCalc(number);
-    return response.request_id;
+      const response = await connector.queryCalc(number);
+      return response.request_id;
   };
 
   const queryCalcResult = async (reqId) => {
