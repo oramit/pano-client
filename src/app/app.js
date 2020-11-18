@@ -17,8 +17,7 @@ module.exports = class App {
         this.initOutputFile();
         this.requestsToPoll = [];
         // This data structure contains request status entries: 
-        // Like that one for example: 
-        // { bd-ddbc-49 => { input: 2, result: 4 }} for request id: 'bd-ddbc-49'
+        // Like that one for example: { bd-ddbc-49 => { input: 2, result: 4 }} for request id: 'bd-ddbc-49'
         this.accumulatedRequests = {};
     };
 
@@ -27,12 +26,13 @@ module.exports = class App {
             if(err) {
                 throw err;
             }
-            console.log(`Output file initiated..`);
+            console.log(`Output file initiated.`);
         });
     };
 
     writeResult = (reqId) => {
-        const resultText = `${this.accumulatedRequests[reqId].input} ==> ${this.accumulatedRequests[reqId].result}`;
+        const { input, result } = this.accumulatedRequests[reqId];
+        const resultText = `${input} ==> ${result}`;
         
         fs.appendFile(OUTPUT_FILE, `${resultText}\n`, (err) => {
             if(err) {

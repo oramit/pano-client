@@ -10,6 +10,5 @@ const { numbers } = require('./data.js');
 
     await appInst.calculate();
     
-    Object.keys(appInst.accumulatedRequests).length;
     console.log(`Finished calculating after ${new Date().getTime() - startTime.getTime()} miliseconds.`);
 })();
