@@ -1,5 +1,5 @@
+const App = require('./app/app.js');
 const { numbers } = require('./data.js');
-const App = require('./app');
 
 (async function run() {
     const startTime = new Date();
