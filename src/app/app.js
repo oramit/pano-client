@@ -12,7 +12,7 @@ module.exports = class App {
     constructor(data) {
         this.inputsToWorkWith = Array.isArray(data) ? data.filter(currInput => typeof currInput === 'number') : [];
         this.totalInputsToCalc = this.inputsToWorkWith.length;
-        this.totalInputsWereCalculated = 0;
+        this.calculatedCount = 0;
 
         this.initOutputFile();
         this.requestsToPoll = [];
@@ -39,7 +39,7 @@ module.exports = class App {
                 throw err;
             }
             console.log(`Result accumulated: ${resultText}`);
-            this.totalInputsWereCalculated ++;
+            this.calculatedCount ++;
             console.log(`Removing data from accumulator`);
             delete this.accumulatedRequests[reqId];
         });
@@ -91,7 +91,7 @@ module.exports = class App {
         return new Promise(async (resolve, reject) => {
             const timer = setInterval(() => {       
                 // If all numbers were calculated..
-                if(this.totalInputsWereCalculated === this.totalInputsToCalc) {
+                if(this.calculatedCount === this.totalInputsToCalc) {
                     clearInterval(timer);
                     resolve();
                 }
