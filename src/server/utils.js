@@ -20,7 +20,7 @@ module.exports = (connector) => {
 
   return {
     queryCalc,
-    queryCalcResult,
-    queryCalcs
+    queryCalcs,
+    queryCalcResult
   }
 };
