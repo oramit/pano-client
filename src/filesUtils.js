@@ -10,6 +10,15 @@ exports.initOutputFile = async () => {
     });
 };
 
+exports.readNext = async () => {
+    fs.readSync(OUTPUT_FILE, '', (err) => {
+        if(err) {
+            throw err;
+        }
+        console.log(`Output file initiated.`);
+    });
+};
+
 exports.append = (appendedText, doAfterAppend) => {    
     fs.appendFile(OUTPUT_FILE, `${appendedText}\n`, (err) => {
         if(err) {

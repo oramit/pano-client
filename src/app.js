@@ -5,9 +5,7 @@ const serverUtils = require('./server/utils')(serverConnector);
 const { SERVER_CALC_CAPACITY } = require('./consts.js');
 
 module.exports = class App {
-    constructor(data) {
-        this.inputsToWorkWith = Array.isArray(data) ? data.filter(currInput => typeof currInput === 'number') : [];
-        this.totalInputsToCalc = this.inputsToWorkWith.length;
+    constructor() {
         this.calculatedCount = 0;
 
         this.requestsToPoll = [];
@@ -47,6 +45,7 @@ module.exports = class App {
                 console.log(`Removing data from accumulator`);
                 delete this.accumulatedRequests[reqId];
             };
+
             filesUtils.append(resultText, doAfterAppend);
             
             // If we still have an input to calculate, pop the next input
