@@ -1,12 +1,12 @@
 module.exports = (connector) => {
   const queryCalc = async (number) => {
     const response = await connector.queryCalc(number);
-    return response.request_id;
+    return response.data && response.data.request_id;
   };
 
   const queryCalcResult = async (reqId) => {
     const response = await connector.queryCalcResult(reqId);
-    return response;
+    return response.data;
   };
 
   const queryCalcs = async (numbersArray) => {

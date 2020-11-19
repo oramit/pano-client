@@ -13,7 +13,9 @@ exports.queryCalc = async (number) => {
     ...requestHeaders
   });
 
-  return response.json();
+  return response.json().then(data => 
+    ({data, status: response.status})
+  );
 };
 
 exports.queryCalcResult = async (reqId) => {
@@ -21,5 +23,7 @@ exports.queryCalcResult = async (reqId) => {
     ...requestHeaders
   });
 
-  return response.json();
+  return response.json().then(data => 
+    ({data, status: response.status})
+  );
 };
