@@ -12,12 +12,12 @@ module.exports = class App {
         this.accumulatedRequests = {};
     };
 
-    init = async () => {
-        await this.readNextChunk();    
+    init = () => {
+        this.readNextChunk();    
     };
 
-    readNextChunk = async () => {
-        this.inputsToWorkWith = await filesUtils.readNextChunk();
+    readNextChunk = () => {
+        this.inputsToWorkWith = filesUtils.readNextChunk();
         this.calculatedCount = 0;
         this.totalInputsToCalc = this.inputsToWorkWith.length;
     };
@@ -79,8 +79,8 @@ module.exports = class App {
             const timer = setInterval(async () => {       
                 // If all numbers were calculated..
                 if(this.calculatedCount === this.totalInputsToCalc) {
-                    await this.readNextChunk();
-
+                    this.readNextChunk();
+                    
                     if(this.totalInputsToCalc === 0) { 
                         clearInterval(timer);
                         resolve();

@@ -3,7 +3,7 @@ const { OUTPUT_FILE, INPUT_FILE, BYTES_TO_READ } = require('./consts.js');
 
 let chunksRead = 0;
 
-exports.readNextChunk = async (splitter = " ") => {
+exports.readNextChunk = (splitter = " ") => {
     const buf = Buffer.alloc(BYTES_TO_READ, 0);
     let fd;
 

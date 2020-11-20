@@ -9,7 +9,7 @@ const filesUtils = require('./filesUtils.js');
     const appInst = new App();
     console.log('Calculations client was created successfully..');
 
-    await appInst.init();
+    appInst.init();
     await appInst.calculate();
     
     console.log(`Finished calculating after ${new Date().getTime() - startTime.getTime()} miliseconds.`);
